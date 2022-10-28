@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+// import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Gallery from "./Gallery";
+import AddCategory from "./AddCategory";
+import Category from "./Category";
+import AddImage from "./AddImage";
+import Image from "./Image";
+
+const App = () => {
+    const [state, setState] = useState("gallery");
+    console.log("APP.js " + state);
+    
+    return (
+        <>
+            { state === "gallery" && <Gallery 
+                handleClick={() => setState("addGallery")} 
+                handleCategory={() => setState("category")} /> }
+            { state === "category" && <Category 
+                handleClick={() => setState("gallery")} 
+                handleAddImage={() => setState("addImage")}
+                handleViewImage={() => setState("image")} /> }
+            { state === "addGallery" && <AddCategory 
+                handleClick={() => setState("gallery")} /> }
+            { state === "addImage" && <AddImage
+                handleClick={() => setState("gallery")}
+                handleCategory={() => setState("category")} /> }
+            { state === "image" && <Image 
+            handleClick={() => setState("category")} />}
+
+        </>
+    );
 }
 
 export default App;

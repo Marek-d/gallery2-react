@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1920px;
+  min-height: 100vh;
+  background: #F9F9F9 0% 0% no-repeat padding-box;
+  font-family: "Barlow", sans-serif;
+}
+
+.gallery {
+  width: 68.3%;
+  margin: 0 auto;
+  padding: 5em 0;
+}
+.gallery h2 {
+  font-weight: medium;
+  font-size: 2.25em;
+}
+.gallery h5 {
+  margin-top: 2.2em;
+  font-size: 1.125em;
+  font-weight: normal;
+}
+.gallery h5 svg {
+  width: 0.71em;
+  height: 0.66em;
+  cursor: pointer;
+}
+.gallery .gallery-categories {
+  width: 100%;
+  margin-top: 2.5em;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1.7em;
+}
+.gallery .gallery-categories > div {
+  flex-grow: 1;
+  width: 23%;
+  height: 14.5em;
+  background: #fff 0% 0% no-repeat padding-box;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.0784313725);
+  border-radius: 4px;
+  opacity: 1;
+  position: relative;
+}
+.gallery .gallery-categories > div:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s linear;
+}
+.gallery .gallery-categories > div .count-photos {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  display: inline-block;
+  padding: 0.3em 0.6em;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.3215686275) 0% 0% no-repeat padding-box;
+  border-radius: 0.75em;
+  text-align: left;
+  letter-spacing: 0;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.75em;
+  line-height: 0.875em;
+  color: #fff;
+}
+.gallery .gallery-categories > div .img {
+  width: 100%;
+  height: 77.2%;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px 4px 0 0;
+}
+.gallery .gallery-categories > div .arch {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.gallery .gallery-categories > div p {
+  display: inline-block;
+  width: 100%;
+  transform: translateY(100%);
+  text-align: center;
+  font-size: 1em;
+}
+.gallery .gallery-categories > div.add-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.gallery .gallery-categories > div.add-category svg {
+  width: 1.5em;
+  height: 1.5em;
+  opacity: 0.32;
+}
+.gallery .gallery-categories > div.empty-div {
+  visibility: hidden;
+}
+
+.img-1 {
+  background-image: url("../images/priroda.jpg");
+}
+
+.img-2 {
+  background-image: url("../images/architektura.jpg");
+}
+
+.img-3 {
+  background-image: url("../images/ludia.jpg");
+}
+
+.img-4 {
+  background-image: url("../images/jedlo.jpg");
+}
+
+.img-5 {
+  background-image: url("../images/abstrakt.jpg");
+}
+
+.arch-1 {
+  background-image: url("../images/arch1.jpg");
+}
+
+.arch-2 {
+  background-image: url("../images/arch2.jpg");
+}
+
+.arch-3 {
+  background-image: url("../images/arch3.jpg");
+}
+
+.arch-4 {
+  background-image: url("../images/arch4.jpg");
+}
+
+.arch-5 {
+  background-image: url("../images/arch5.jpg");
+}
+
+.add-gallery-container {
+  background: rgba(0, 0, 0, 0.5607843137) 0 0 no-repeat padding-box;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-gallery {
+  width: 35em;
+  background-color: #fff;
+  border-radius: 1em;
+  padding: 3em;
+}
+.add-gallery .add-gallery-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.add-gallery svg {
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+}
+.add-gallery span {
+  position: relative;
+  top: 3.4em;
+  left: 1em;
+  padding: 0 0.5em;
+  font-size: 0.875em;
+  background-color: #fff;
+}
+.add-gallery .input-text {
+  width: 100%;
+  padding: 1em 1.2em;
+  margin-top: 3em;
+  border: 1px solid #DDD;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0784313725);
+  border-radius: 0.25em;
+}
+.add-gallery .input-text:focus {
+  outline: none;
+}
+.add-gallery input[type=button] {
+  width: 100%;
+  padding: 1em;
+  margin-top: 1.5em;
+  background-color: #000;
+  border-radius: 0.25em;
+  color: #fff;
+  cursor: pointer;
+}
+
+.add-image-container {
+  background: rgba(0, 0, 0, 0.5607843137) 0 0 no-repeat padding-box;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-image {
+  width: 35em;
+  background-color: #fff;
+  border-radius: 1em;
+  padding: 3em;
+}
+.add-image .add-image-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.add-image svg {
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+}
+.add-image .choose-file {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 3em 0;
+  margin-top: 1.75em;
+  border: 1px dashed #DDD;
+  border-radius: 0.25em;
+}
+.add-image .choose-file .image-icon {
+  cursor: default;
+}
+.add-image .choose-file span {
+  font-weight: bolder;
+}
+.add-image .choose-file span.or {
+  opacity: 0.56;
+  font-weight: normal;
+}
+.add-image .choose-file .choose-file-btn {
+  border: 2px solid #000;
+  border-radius: 0.25em;
+  padding: 0.875em 2em;
+  margin-top: 0.4em;
+  background-color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+.add-image .add-file-btn {
+  width: 100%;
+  padding: 1.375em;
+  margin-top: 1.5em;
+  background-color: #000;
+  border-radius: 0.25em;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.image-container {
+  background: rgba(0, 0, 0, 0.5607843137) 0 0 no-repeat padding-box;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 57.3%;
+  height: 85vh;
+  margin: 0 auto;
+  background-image: url("../images/arch3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.image svg {
+  width: 3em;
+  height: 3em;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 1em;
+  box-shadow: 0 4px 1.5em rgba(0, 0, 0, 0.0784313725);
+  cursor: pointer;
+}
+.image svg.cross-icon {
+  position: absolute;
+  left: 93%;
+  top: 1.5em;
+  background-color: #000000;
+  opacity: 0.56;
+  fill: #fff;
+}
+.image .arrows {
+  display: flex;
+  justify-content: space-between;
+}
+.image .arrows .arrow-left {
+  transform: translateX(-50%);
+}
+.image .arrows .arrow-right {
+  transform: translateX(50%);
+}/*# sourceMappingURL=style.css.map */

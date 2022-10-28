@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
+$white: #fff;
+$light-gray: #F9F9F9;
+$dark-gray: #00000052;
+$black: #000;
+
+@mixin setBackground {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    max-width: 1920px;
+    min-height: 100vh;
+    background: $light-gray 0% 0% no-repeat padding-box;
+    font-family: 'Barlow', sans-serif;
+}
+
+.gallery {
+    width: 68.3%;
+    margin: 0 auto;
+    padding: 5em 0;
+
+    h2 {
+        font-weight: medium;
+        font-size: 2.25em;
+    }
+
+    h5 {
+        margin-top: 2.2em;
+        font-size: 1.125em;
+        font-weight: normal;
+
+        svg {
+           width: 0.71em;
+           height: 0.66em;
+           cursor: pointer; 
+        }
+    }
+
+    .gallery-categories {
+        width: 100%;
+        margin-top: 2.5em;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 1.7em;
+
+        >div {
+            flex-grow: 1;
+            width: 23%;
+            height: 14.5em;
+            background: $white 0% 0% no-repeat padding-box;
+            box-shadow: 0 4px 24px #00000014;
+            border-radius: 4px;
+            opacity: 1;
+            position: relative;
+
+            &:hover {
+                transform: scale(1.05);
+                transition: transform 0.2s linear;
+            }
+
+            .count-photos {
+                position: absolute;
+                top: 1em;
+                left: 1em;
+                
+                display: inline-block;
+                padding: 0.3em 0.6em;
+                opacity: 1;
+                
+                background: $dark-gray 0% 0% no-repeat padding-box;
+                border-radius: 0.75em;
+                
+                text-align: left;
+                letter-spacing: 0;
+                font-family: 'Barlow', sans-serif;
+                font-size: 0.75em;
+                line-height: 0.875em;
+                color: $white;
+            }
+
+            .img {
+                width: 100%;
+                height: 77.2%;
+                background-color: transparent;
+                @include setBackground;
+                border-radius: 4px 4px 0 0;
+            }
+
+            .arch {
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                @include setBackground;
+            }
+
+
+            p {
+                display: inline-block;
+                width: 100%;
+                transform: translateY(100%);
+
+                text-align: center;
+                font-size: 1em;
+                
+            }
+
+            &.add-category {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                svg {
+                    width: 1.5em;
+                    height: 1.5em;
+                    opacity: 0.32;
+                }
+            }
+
+            &.empty-div {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+.img-1 {
+    background-image: url("../images/priroda.jpg");
+}
+
+.img-2 {
+    background-image: url("../images/architektura.jpg");
+}
+
+.img-3 {
+    background-image: url("../images/ludia.jpg");
+}
+
+.img-4 {
+    background-image: url("../images/jedlo.jpg");
+}
+
+.img-5 {
+    background-image: url("../images/abstrakt.jpg");
+}
+
+// ***** GALLERY ITEMS - gallery ***** 
+
+.arch-1 {
+    background-image: url("../images/arch1.jpg");
+}
+
+.arch-2 {
+    background-image: url("../images/arch2.jpg");
+}
+
+.arch-3 {
+    background-image: url("../images/arch3.jpg");
+}
+
+.arch-4 {
+    background-image: url("../images/arch4.jpg");
+}
+
+.arch-5 {
+    background-image: url("../images/arch5.jpg");
+}
+
+// ***** ADD CATEGORY SITE *****
+
+.add-gallery-container {
+    background: #0000008F 0 0 no-repeat padding-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-gallery {
+    width: 35em;
+    background-color: $white;
+    border-radius: 1em;
+    padding: 3em;
+
+    .add-gallery-heading {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    svg {
+        width: 1.5em;
+        height: 1.5em;
+        cursor: pointer;
+    }
+
+    span {
+        position: relative;
+        top: 3.4em;
+        left: 1em;
+        padding: 0 0.5em;
+        font-size: 0.875em;
+        background-color: $white;
+    }
+
+    .input-text {
+        width: 100%;
+        padding: 1em 1.2em;
+        margin-top: 3em;
+        border: 1px solid #DDD;
+        box-shadow: 0 1px 2px #00000014;
+        border-radius: 0.25em;
+    }
+
+    .input-text:focus {
+        outline: none;
+    }
+
+    input[type="button"] {
+        width: 100%;
+        padding: 1em;
+        margin-top: 1.5em;
+        background-color: #000;
+        border-radius: 0.25em;
+        color: $white;
+        cursor: pointer;
+    }
+}
+
+// ***** ADD IMAGES SITE *****
+.add-image-container {
+    background: #0000008F 0 0 no-repeat padding-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-image {
+    width: 35em;
+    background-color: $white;
+    border-radius: 1em;
+    padding: 3em;
+
+    .add-image-heading {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    svg {
+        width: 1.5em;
+        height: 1.5em;
+        cursor: pointer;
+    }
+
+    .choose-file {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+
+        padding: 3em 0;
+        margin-top: 1.75em;
+        border: 1px dashed #DDD;
+        border-radius: 0.25em;
+        
+        .image-icon {
+            cursor: default;
+        }
+
+        span {
+            font-weight: bolder;
+            
+            &.or {
+                opacity: 0.56;
+                font-weight: normal;
+            }
+        }
+
+        .choose-file-btn {
+            border: 2px solid $black;
+            border-radius: 0.25em;
+            padding: 0.875em 2em;
+            margin-top: 0.4em;
+            background-color: $white;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    }
+
+    .add-file-btn {
+        width: 100%;
+        padding: 1.375em;
+        margin-top: 1.5em;
+
+        background-color: $black;
+        border-radius: 0.25em;
+        
+        color: $white;
+        font-size: 1em;
+        cursor: pointer;
+    }
+}
+
+// ***** image.html *****
+
+.image-container {
+    background: #0000008F 0 0 no-repeat padding-box;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image {
+    width: 57.3%;
+    height: 85vh;
+    margin: 0 auto;
+    background-image: url("../images/arch3.jpg");
+    @include setBackground;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    svg {
+        width: 3em;
+        height: 3em;
+        background-color: $white;
+        border-radius: 50%;
+        padding: 1em;
+        box-shadow: 0 4px 1.5em #00000014;
+        cursor: pointer;
+
+        &.cross-icon {
+            position: absolute;
+            left: 93%;
+            top: 1.5em;
+
+            background-color: #000000;
+            opacity: 0.56;
+            fill: $white;
+        }
+    }
+
+    .arrows {
+        display: flex;
+        justify-content: space-between;
+
+        .arrow-left {
+            transform: translateX(-50%);
+        }
+
+        .arrow-right {
+            transform: translateX(50%);
+        }
+    }
+}
+
