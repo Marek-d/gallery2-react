@@ -9,25 +9,41 @@ import Image from "./Image";
 
 const App = () => {
     const [state, setState] = useState("gallery");
-    console.log("APP.js " + state);
+    // console.log("APP.js " + state);
     
+    const [galleryPath, setGalleryPath] = useState("");
+    // console.log(galleryPath);
+
+    const [imagePath, setImagePath] = useState("");
+
+    const [galleryImageArray, setGalleryImageArray] = useState([]);
+    // console.log("APP: " + galleryImageArray);
+
     return (
         <>
             { state === "gallery" && <Gallery 
                 handleClick={() => setState("addGallery")} 
-                handleCategory={() => setState("category")} /> }
+                handleCategory={() => setState("category")}
+                handleGalleryPath={(path) => setGalleryPath(path)}
+                /> }
             { state === "category" && <Category 
                 handleClick={() => setState("gallery")} 
                 handleAddImage={() => setState("addImage")}
-                handleViewImage={() => setState("image")} /> }
+                handleViewImage={() => setState("image")}
+                galleryPath={galleryPath}
+                imagePath={(imagePath) => setImagePath(imagePath)}
+                galleryImageArray={(galleryImages) => setGalleryImageArray(galleryImages)}
+                /> }
             { state === "addGallery" && <AddCategory 
                 handleClick={() => setState("gallery")} /> }
             { state === "addImage" && <AddImage
                 handleClick={() => setState("gallery")}
-                handleCategory={() => setState("category")} /> }
+                handleCategory={() => setState("category")}
+                galleryPath={galleryPath} /> }
             { state === "image" && <Image 
-            handleClick={() => setState("category")} />}
-
+            handleClick={() => setState("category")} 
+            imagePath={imagePath}
+            galleryImages={galleryImageArray} />}
         </>
     );
 }
